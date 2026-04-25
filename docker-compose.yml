@@ -1,0 +1,18 @@
+services:
+  nuxt:
+    image: node:20-alpine
+    working_dir: /app
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+    ports:
+      - "3000:3000"
+    environment:
+      NUXT_PUBLIC_SITE_URL: http://localhost:3000
+      NUXT_PUBLIC_SITE_NAME: Nuxt 3 PWA SEO Starter
+      NUXT_PUBLIC_SITE_DESCRIPTION: A production-ready Nuxt 3 starter focused on PWA installability, crawlability, and Core Web Vitals.
+      NUXT_PUBLIC_SITE_LOCALE: en_US
+    volumes:
+      - .:/app
+      - nuxt_node_modules:/app/node_modules
+
+volumes:
+  nuxt_node_modules:
