@@ -112,11 +112,14 @@ Copy `.env.example` to `.env` and adjust as needed.
 ### Standard Node workflow
 
 ```bash
+nvm use
 npm install
 npm run dev
 ```
 
 The app will be available at `http://localhost:3000`.
+
+The repository includes `.nvmrc` pinned to Node 20 so local environments line up with the documented runtime.
 
 ### Docker Compose workflow
 
